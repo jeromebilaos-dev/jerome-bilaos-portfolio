@@ -1,62 +1,74 @@
-/* --- Full Screen Black Background --- */
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    background-color: #000000; /* Pure black */
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* A clean, modern font */
-    color: white;
-
-    /* These three lines are key to centering the content */
-    display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center;     /* Center vertically */
+:root {
+  --bg-color: #0A0A0A;
+  --text-color: #EAEAEA;
+  --text-secondary: #B0B0B0;
+  --accent-color: #FFD700;
+  --glass-bg: rgba(20, 20, 20, 0.6);
+  --glass-border: rgba(255, 215, 0, 0.2);
+  --font-family: 'Inter', sans-serif;
 }
 
-/* --- Content Holder --- */
-.main-content {
-    text-align: center; /* Ensures all text inside is centered */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font-family);
+  line-height: 1.7;
+  margin: 0;
+  padding: 0;
 }
 
-/* --- Heading Style --- */
-h1 {
-    font-size: 3.5rem; /* Large, impactful text */
-    font-weight: 300; /* A thinner, more elegant font weight */
-    letter-spacing: 2px;
-    margin-bottom: 30px;
+/* --- Header & Footer --- */
+.main-header, .main-footer {
+  background-color: #111;
+  border-bottom: 1px solid var(--glass-border);
+  padding: 1rem 2rem;
+}
+.main-footer {
+  border-top: 1px solid var(--glass-border);
+  border-bottom: none;
+  text-align: center;
+  margin-top: 4rem;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+.header-container, .footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer-container {
+  flex-direction: column;
+}
+.header-logo {
+  font-weight: 800;
+  font-size: 1.5rem;
+  color: white;
+  text-decoration: none;
+}
+.main-nav a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  margin-left: 2rem;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+.main-nav a:hover {
+  color: var(--accent-color);
 }
 
-/* --- Circular Profile Image --- */
-.profile-image {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%; /* This makes the image a perfect circle */
-    object-fit: cover;   /* Prevents the image from being stretched */
-    border: 3px solid white;
-    margin-bottom: 30px;
+/* --- Main Content Area --- */
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 4rem 2rem; /* Add spacing around content */
 }
 
-/* --- Custom Audio Button --- */
-.audio-control {
-    background: none;
-    border: 2px solid white;
-    color: white;
-    padding: 12px 25px;
-    font-size: 1rem;
-    cursor: pointer;
-    border-radius: 50px; /* Pill-shaped button */
-    margin-bottom: 30px;
-    transition: all 0.2s ease-in-out; /* Smooth hover effect */
+/* --- General Styling --- */
+h1, h2 {
+  color: var(--accent-color);
+  text-align: center;
 }
-
-.audio-control:hover {
-    background-color: white;
-    color: black;
-}
-
-/* --- Video Player Styling --- */
-.project-video {
-    max-width: 90%; /* Make sure it fits on smaller screens */
-    width: 600px;  /* Set a specific width for larger screens */
-    border-radius: 8px; /* Slightly rounded corners */
-}
+h1 { font-size: 3rem; margin-bottom: 1rem; }
+h2 { font-size: 2.5rem; margin-bottom: 3rem; }

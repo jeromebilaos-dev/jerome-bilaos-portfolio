@@ -1,21 +1,28 @@
-// Get a reference to the button and the hidden audio player from the HTML
-const playPauseBtn = document.getElementById('play-pause-btn');
-const audio = document.getElementById('background-audio');
+document.addEventListener("DOMContentLoaded", function() {
+  
+  // This function loads an HTML file and injects it into a placeholder
+  const loadHTML = (filePath, placeholderId) => {
+    const placeholder = document.getElementById(placeholderId);
+    if (placeholder) {
+      fetch(filePath)
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
+          return response.text();
+        })
+        .then(data => {
+          placeholder.innerHTML = data;
+        })
+        .catch(error => {
+          console.error('Error loading HTML:', error);
+          placeholder.innerHTML = `<p style="color:red;">Error loading ${placeholderId}.</p>`;
+        });
+    }
+  };
 
-// Add a 'click' event listener to the button
-playPauseBtn.addEventListener('click', () => {
-
-  // Check if the audio is currently paused
-  if (audio.paused) {
-    // If it's paused, play the audio
-    audio.play();
-    // And change the button's text to show the 'Pause' icon
-    playPauseBtn.innerHTML = '⏸️ Pause';
-  } else {
-    // If it's playing, pause the audio
-    audio.pause();
-    // And change the button's text back to the 'Play' icon
-    playPauseBtn.innerHTML = '▶️ Play';
-  }
+  // Load the header and footer into their placeholders
+  loadHTML('partials/header.html', 'header-placeholder');
+  loadHTML('partials/footer.html', 'footer-placeholder');
 
 });
