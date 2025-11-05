@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +10,7 @@
   <!-- =================================================================== -->
   <title>Jerome Bilaos - Digital Operations & Project Partner</title>
   <meta name="description" content="I'm the human expertise behind the AI. I help business owners leverage technology to streamline operations, manage projects, and drive growth.">
-  
+
   <!-- Favicon (Uses your headshot) -->
   <link rel="icon" href="https://i.postimg.cc/x89h4RkP/Generated-Image-November-03-2025-10-57PM-1.png" type="image/png">
 
@@ -17,7 +18,7 @@
   <meta property="og:title" content="Jerome Bilaos - Digital Operations & Project Partner">
   <meta property="og:description" content="Helping businesses leverage technology to streamline operations, manage projects, and drive growth.">
   <meta property="og:image" content="https://i.postimg.cc/x89h4RkP/Generated-Image-November-03-2025-10-57PM-1.png">
-  <meta property="og:url" content="https://YOUR_FINAL_URL_HERE.com"> <!-- TODO: Replace with your actual final URL -->
+  <meta property="og:url" content="https://sites.google.com/view/jeromebilaos/test"> <!-- TODO: Replace with your actual final URL -->
   <meta property="og:type" content="website">
   <!-- =================================================================== -->
 
@@ -25,99 +26,141 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <style>
+    /* --- Your Existing Core Styles --- */
+    :root {
+      --bg-color: #0A0A0A;
+      --text-color: #EAEAEA;
+      --text-secondary: #B0B0B0;
+      --accent-color: #FFD700;
+      /* Yellow color */
+      --accent-color-glow: rgba(255, 215, 0, 0.2);
+      --font-family: 'Inter', sans-serif;
+    }
 
-  <!-- Links to your global stylesheet -->
-  <link rel="stylesheet" href="assets/css/style.css">
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-family: var(--font-family);
+      line-height: 1.7;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+
+    /* --- Matrix Background Canvas Style --- */
+    #matrix-background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -2;
+      opacity: 0.3;
+    }
+
+    /* === NEW STYLES FOR THE HOME PAGE === */
+    .home-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      /* Vertical centering */
+      align-items: center;
+      /* Horizontal centering */
+      min-height: 100vh;
+      /* Full screen height */
+      text-align: center;
+      color: var(--accent-color);
+      /* Make all text yellow */
+      z-index: 1;
+      padding: 20px;
+      /* Add some padding for smaller screens */
+      box-sizing: border-box;
+    }
+
+    .home-container h1 {
+      font-size: clamp(3rem, 10vw, 8rem);
+      /* Responsive font size */
+      font-weight: 800;
+      margin: 0;
+      text-shadow: 0 0 15px var(--accent-color-glow);
+    }
+
+    .home-container p {
+      font-size: clamp(1.5rem, 5vw, 3rem);
+      /* Responsive font size */
+      margin-top: 1.5rem;
+      font-weight: 500;
+    }
+  </style>
 </head>
-<body>
-  <!-- This div is the placeholder for your floating navigation menu -->
-  <div id="nav-placeholder"></div>
-  
-  <canvas id="matrix-background"></canvas>
-  
-  <div class="main-layout">
-    <aside class="left-pane">
-      <div>
-        <div class="intro">
-          <div class="headshot-container">
-            <div id="audio-prompt-bubble" class="speech-bubble">
-                Click my picture to hear a quick intro!
-            </div>
-            <img id="headshot-img" src="https://i.postimg.cc/x89h4RkP/Generated-Image-November-03-2025-10-57PM-1.png" alt="Professional headshot of Jerome Bilaos" class="headshot">
-          </div>
-          <div class="audio-controls">
-              <button id="play-pause-btn" aria-label="Play Introduction">
-                  <svg class="icon-play" viewBox="0 0 24 24"><path d="M8,5.14V19.14L19,12.14L8,5.14Z"></path></svg>
-                  <svg class="icon-pause" style="display: none;" viewBox="0 0 24 24"><path d="M14,19H18V5H14M6,19H10V5H6V19Z"></path></svg>
-              </button>
-          </div>
-          <h1 style="transition-delay: 0.1s;">Jerome Bilaos</h1>
-          <p style="transition-delay: 0.2s;">Your Digital Operations Partner. <br> I handle the technical details and manage your projects so you can focus on growing your business.</p>
-          <div class="intro-buttons">
-            <a href="https://calendar.app.google/TrSDiiaZQh8tVsLw7" target="_blank" rel="noopener noreferrer" class="cta-button" style="transition-delay: 0.3s;">Schedule a Call</a>
-            <a href="mailto:jeromebilaos12@gmail.com" class="cta-button secondary" style="transition-delay: 0.4s;">Send an Email</a>
-          </div>
-        </div>
-        <nav class="contact-links">
-          <a id="resume-link-wip" class="tooltip-trigger" style="transition-delay: 0.5s;">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"></path></svg>
-            <span>Resume</span>
-            <span class="tooltip-text">Updates In Progress</span>
-          </a>
-          <a href="https://www.linkedin.com/in/jeromebilaos-generalvirtualassistant-herova/" target="_blank" rel="noopener noreferrer" style="transition-delay: 0.6s;"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zm-7 8.5a1.5 1.5 0 0 0 1.5-1.5v-3a1.5 1.5 0 0 0-3 0v3a1.5 1.5 0 0 0 1.5 1.5zM8 18h2v-5H8v5zm4 0h2v-5h-2v5zm4 0h2v-5h-2v5z"></path></svg><span>LinkedIn</span></a>
-          <a href="https://www.onlinejobs.ph/jobseekers/info/1075962" target="_blank" rel="noopener noreferrer" style="transition-delay: 0.7s;"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-2 .89-2 2v11c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z"></path></svg><span>OnlineJobsPH</span></a>
-          <a href="https://www.upwork.com/freelancers/~012ae504b5f63f1d8f" target="_blank" rel="noopener noreferrer" style="transition-delay: 0.8s;"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-2 .89-2 2v11c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z"></path></svg><span>Upwork</span></a>
-        </nav>
-      </div>
-      <footer class="site-footer">
-        <p>This page was designed and crafted with the assistance of Google AI Studio (Gemini Pro).</p>
-        <p>&copy; 2025 Jerome Bilaos. All rights reserved.</p>
-      </footer>
-    </aside>
-    
-    <main class="right-pane">
-      <section id="introduction">
-        <h1 class="animate-on-scroll" style="--delay: 0.1s;">AI is a powerful tool.</h1>
-        <h2 class="animate-on-scroll" style="--delay: 0.2s;">But a tool is only as good as the person who wields it.</h2>
-        
-        <p class="section-intro animate-on-scroll" style="--delay: 0.3s;">In today's business landscape, AI and automation are the engine of efficiency. <br> But a powerful tool without a skilled operator is just potential. <br> To turn that potential into profit requires <br> a human hand for strategy, critical thinking, and real-world expertise.</p>
-        <p class="section-intro animate-on-scroll" style="--delay: 0.4s; font-weight: 700; color: var(--text-color); margin-bottom: 0;">Every business is tuning into the digital revolution. <br> The real question for your business isn’t whether you should use these tools — <br> it’s who will conduct your orchestra and ensure every instrument plays in harmony.</b></p>
-        
-        <div class="hero-buttons animate-on-scroll" style="--delay: 0.5s;">
-          <a href="about.html#testimonials" class="cta-button secondary">See What Clients Say</a>
-          <a href="about.html#process" class="cta-button">See My Process</a>
-        </div>
-        
-        <div class="hero-tags animate-on-scroll" style="--delay: 0.6s;">
-            <span>Digital Marketing Strategist</span>
-            <span>Automation & Systems Specialist</span>
-            <span>Operations & Project Manager</span>
-            <span>Sales and Marketing Specialist</span>
-            <span>Website Designer & Developer</span>
-            <span>SEO & Web Optimization Specialist</span>
-            <span>Social Media Manager</span>
-            <span>General Virtual Assistant</span>
-        </div>
-      </section>
-    </main>
-  </div>
 
-  <!-- All Modals and other hidden elements -->
-  <div id="creativeModal" class="modal"> <div class="modal-content"> <div class="modal-header"> <h2 class="modal-title">Creative Work</h2> <span class="modal-close" tabindex="0" role="button" aria-label="Close modal">&times;</span> </div> <div class="modal-body"></div> </div> </div>
-  <div id="inactivityModal" class="modal"> <div class="modal-content" style="max-width: 600px; height: auto; text-align: center;"> <div class="modal-header" style="border: none;"><h2 class="modal-title" style="margin: 0 auto;">Still Considering?</h2><span class="modal-close" tabindex="0" role="button" aria-label="Close modal">&times;</span></div> <div class="modal-body" style="padding-top: 0;"> <p class="section-intro" style="margin-bottom: 2rem;">It looks like you've been idle for a moment. If you have a project in mind or a challenge I can help solve, I'm ready to discuss it.</p> <a href="https://calendar.app.google/TrSDiiaZQh8tVsLw7" target="_blank" rel="noopener noreferrer" class="cta-button" style="margin-right: 1rem;">Schedule a Call</a> <a href="mailto:jeromebilaos12@gmail.com" class="cta-button secondary">Send an Email</a> </div> </div> </div>
-  <div id="exitIntentModal" class="modal"> <div class="modal-content" style="max-width: 600px; height: auto; text-align: center;"> <div class="modal-header" style="border: none;"><h2 class="modal-title" style="margin: 0 auto;">Before You Go...</h2><span class="modal-close" tabindex="0" role="button" aria-label="Close modal">&times;</span></div> <div class="modal-body" style="padding-top: 0;"> <p class="section-intro" style="margin-bottom: 2rem;">Have a project in mind or a challenge I can help solve? <br> Let's connect. I'd be happy to discuss how my skills can benefit your business.</p> <a href="https://calendar.app.google/TrSDiiaZQh8tVsLw7" target="_blank" rel="noopener noreferrer" class="cta-button" style="margin-right: 1rem;">Schedule a Call</a> <a href="mailto:jeromebilaos12@gmail.com" class="cta-button secondary">Send an Email</a> </div> </div> </div>
-  <div id="mobile-sticky-cta"> <a href="https://calendar.app.google/TrSDiiaZQh8tVsLw7" target="_blank" rel="noopener noreferrer" class="cta-button">Schedule a Call</a> <a href="mailto:jeromebilaos12@gmail.com" class="cta-button secondary">Send an Email</a> </div>
-  <audio id="introAudio" preload="metadata"> <source src="https://cdn.pixabay.com/download/audio/2022/11/21/audio_9593250b71.mp3" type="audio/mpeg"> Your browser does not support the audio element. </audio>
-  
-  <!-- External JS Libraries -->
-  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
-  <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
-  
-  <!-- Your Global JavaScript file -->
-  <script src="assets/js/main.js"></script>
+<body>
+
+  <!-- The animated background canvas -->
+  <canvas id="matrix-background"></canvas>
+
+  <!-- Your new centered content -->
+  <main class="home-container">
+    <h1>Hello World!</h1>
+    <p>~ Jerome</p>
+  </main>
+
+
+  <!-- The JavaScript for the animated background -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const canvas = document.getElementById('matrix-background');
+      if (canvas) {
+        const ctx = canvas.getContext('2d');
+        const keywords = ['SEO', 'WORDPRESS', 'WEBSITE', 'AI', 'REPORTS', 'ANALYTICS', 'MARKETING', 'FACEBOOK', 'INSTAGRAM', 'LINKEDIN', 'TIKTOK', 'SHOPIFY', 'WIX', 'PROJECT MANAGEMENT', 'AUTOMATION', 'ECOMMERCE', 'GOOGLE ADS', 'META ADS', 'CONTENT', 'STRATEGY', 'QA TESTING', 'CRM', 'ZAPIER', 'OPERATIONS', 'EFFICIENCY', 'DATA'];
+        const alphabet = [...new Set(keywords.join('').replace(/\s/g, ''))].join('') + '0123456789';
+        const fontSize = 16;
+        let columns, rainDrops, animationInterval;
+
+        const setupCanvas = () => {
+          canvas.width = window.innerWidth;
+          canvas.height = window.innerHeight;
+          columns = Math.floor(window.innerWidth / fontSize);
+          rainDrops = Array(columns).fill(1).map(() => Math.floor(Math.random() * canvas.height / fontSize));
+        };
+
+        const draw = () => {
+          ctx.fillStyle = 'rgba(10, 10, 10, 0.05)';
+          ctx.fillRect(0, 0, canvas.width, canvas.height);
+          ctx.fillStyle = '#FFD700';
+          ctx.font = fontSize + 'px monospace';
+          rainDrops.forEach((y, i) => {
+            const text = alphabet.charAt(Math.floor(Math.random() * alphabet.length));
+            ctx.fillText(text, i * fontSize, y * fontSize);
+            if (y * fontSize > canvas.height && Math.random() > 0.975) {
+                rainDrops[i] = 0;
+            }
+            rainDrops[i]++;
+          });
+        };
+
+        const startAnimation = () => {
+          if (animationInterval) clearInterval(animationInterval);
+          animationInterval = setInterval(draw, 80);
+        }
+
+        document.addEventListener('visibilitychange', () => document.hidden ? clearInterval(animationInterval) : startAnimation());
+        window.addEventListener('resize', () => {
+          setupCanvas();
+          startAnimation();
+        });
+        
+        setupCanvas();
+        startAnimation();
+      }
+    });
+  </script>
+
 </body>
+
 </html>
