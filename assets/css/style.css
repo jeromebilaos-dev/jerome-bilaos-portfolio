@@ -1,0 +1,61 @@
+/* --- Global Styles --- */
+body {
+  background-color: #121212; /* A modern, dark grey background */
+  color: #e0e0e0;           /* A soft white for text, easy on the eyes */
+  font-family: Arial, sans-serif; /* A clean, standard font */
+  line-height: 1.6;        /* Adds nice spacing between lines of text */
+  margin: 0;
+  padding: 20px;
+}
+
+/* --- Main Container --- */
+/* We'll wrap our content in a container to center it */
+.container {
+  max-width: 800px; /* Sets a maximum width for the content */
+  margin: 40px auto; /* Centers the container on the page */
+  padding: 20px;
+  background-color: #1e1e1e; /* A slightly lighter grey for the content box */
+  border-radius: 8px; /* Rounds the corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
+}
+
+/* --- Typography --- */
+h1, h2 {
+  color: #ffffff; /* Make headers pure white to stand out */
+  border-bottom: 2px solid #444; /* Adds a line under headers */
+  padding-bottom: 10px;
+  margin-top: 20px;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #333; /* Style the horizontal lines */
+  margin: 40px 0;
+}
+
+/* --- Media Styling --- */
+img, video {
+  max-width: 100%; /* Ensures images and videos never overflow their container */
+  height: auto;    /* Maintains the aspect ratio */
+  display: block;  /* Helps with centering and spacing */
+  margin: 20px auto; /* Adds space above/below and centers the item */
+  border-radius: 4px; /* Slightly rounded corners for media */
+}
+
+/* --- Button Styling --- */
+button {
+  display: block;
+  margin: 20px auto; /* Center the button */
+  padding: 10px 20px;
+  background-color: #007bff; /* A nice blue color */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer; /* Changes the cursor to a pointer on hover */
+  transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+button:hover {
+  background-color: #0056b3; /* A darker blue when you hover over it */
+}
