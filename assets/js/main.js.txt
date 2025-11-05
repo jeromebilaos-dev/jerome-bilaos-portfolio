@@ -1,0 +1,8 @@
+// This line finds the HTML element with the id 'interactive-button'
+const myButton = document.getElementById('interactive-button');
+
+// This line tells the browser to listen for a 'click' on that button
+myButton.addEventListener('click', function() {
+  // This code runs when the button is clicked
+  alert('JavaScript is working!');
+});

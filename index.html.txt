@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jerome Bilaos - Portfolio</title>
+    
+    <!-- This line connects our CSS file -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <h1>Jerome Bilaos - Multimedia Portfolio</h1>
+
+    <hr> <!-- A horizontal line to separate sections -->
+
+    <h2>Profile Image</h2>
+    <!-- The src now points to the correct .webp file -->
+    <img src="assets/image/profile-image.webp" alt="Jerome Bilaos Profile" width="300">
+
+    <hr>
+
+    <h2>AI Generated Background Music</h2>
+    <!-- The src points to the renamed .mp3 file -->
+    <audio controls src="assets/audio/background-music.mp3">
+        Your browser does not support the audio element.
+    </audio>
+
+    <hr>
+
+    <h2>AyurDerm Project Video</h2>
+    <!-- The src points to the renamed .mp4 file -->
+    <video controls width="400" src="assets/video/ayurderm-video.mp4">
+        Your browser does not support the video element.
+    </video>
+
+    <hr>
+
+    <h2>JavaScript Interactivity</h2>
+    <button id="interactive-button">Click Me!</button>
+
+    <!-- This line connects our JavaScript file -->
+    <script src="assets/js/main.js"></script>
+
+</body>
+</html>
