@@ -4,40 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jerome Bilaos - Portfolio</title>
+    <!-- Link to our CSS file -->
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
-    <div class="container">
+    <!-- This container will hold all our centered content -->
+    <div class="main-content">
+        
+        <h1>Hello World!</h1>
+        
+        <img src="assets/image/profile-image.webp" alt="Profile Image" class="profile-image">
+        
+        <!-- This is our custom play/pause button -->
+        <button id="play-pause-btn" class="audio-control">▶️ Play</button>
+        
+        <!-- The audio player is here, but it's hidden. JavaScript will control it. -->
+        <audio id="background-audio" src="assets/audio/background-music.mp3"></audio>
+        
+        <video controls src="assets/video/ayurderm-video.mp4" class="project-video"></video>
 
-        <h1>Jerome Bilaos - Multimedia Portfolio</h1>
+    </div>
 
-        <hr>
-
-        <h2>Profile Image</h2>
-        <img src="assets/image/profile-image.webp" alt="Jerome Bilaos Profile">
-
-        <hr>
-
-        <h2>AI Generated Background Music</h2>
-        <audio controls src="assets/audio/background-music.mp3" style="width: 100%;">
-            Your browser does not support the audio element.
-        </audio>
-
-        <hr>
-
-        <h2>AyurDerm Project Video</h2>
-        <video controls src="assets/video/ayurderm-video.mp4">
-            Your browser does not support the video element.
-        </video>
-
-        <hr>
-
-        <h2>JavaScript Interactivity</h2>
-        <button id="interactive-button">Click Me!</button>
-
-    </div> <!-- This closes the container div -->
-
+    <!-- This MUST be at the end of the body -->
     <script src="assets/js/main.js"></script>
 
 </body>

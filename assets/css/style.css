@@ -1,61 +1,62 @@
-/* --- Global Styles --- */
-body {
-  background-color: #121212; /* A modern, dark grey background */
-  color: #e0e0e0;           /* A soft white for text, easy on the eyes */
-  font-family: Arial, sans-serif; /* A clean, standard font */
-  line-height: 1.6;        /* Adds nice spacing between lines of text */
-  margin: 0;
-  padding: 20px;
+/* --- Full Screen Black Background --- */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #000000; /* Pure black */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* A clean, modern font */
+    color: white;
+
+    /* These three lines are key to centering the content */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;     /* Center vertically */
 }
 
-/* --- Main Container --- */
-/* We'll wrap our content in a container to center it */
-.container {
-  max-width: 800px; /* Sets a maximum width for the content */
-  margin: 40px auto; /* Centers the container on the page */
-  padding: 20px;
-  background-color: #1e1e1e; /* A slightly lighter grey for the content box */
-  border-radius: 8px; /* Rounds the corners */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
+/* --- Content Holder --- */
+.main-content {
+    text-align: center; /* Ensures all text inside is centered */
 }
 
-/* --- Typography --- */
-h1, h2 {
-  color: #ffffff; /* Make headers pure white to stand out */
-  border-bottom: 2px solid #444; /* Adds a line under headers */
-  padding-bottom: 10px;
-  margin-top: 20px;
+/* --- Heading Style --- */
+h1 {
+    font-size: 3.5rem; /* Large, impactful text */
+    font-weight: 300; /* A thinner, more elegant font weight */
+    letter-spacing: 2px;
+    margin-bottom: 30px;
 }
 
-hr {
-  border: none;
-  border-top: 1px solid #333; /* Style the horizontal lines */
-  margin: 40px 0;
+/* --- Circular Profile Image --- */
+.profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* This makes the image a perfect circle */
+    object-fit: cover;   /* Prevents the image from being stretched */
+    border: 3px solid white;
+    margin-bottom: 30px;
 }
 
-/* --- Media Styling --- */
-img, video {
-  max-width: 100%; /* Ensures images and videos never overflow their container */
-  height: auto;    /* Maintains the aspect ratio */
-  display: block;  /* Helps with centering and spacing */
-  margin: 20px auto; /* Adds space above/below and centers the item */
-  border-radius: 4px; /* Slightly rounded corners for media */
+/* --- Custom Audio Button --- */
+.audio-control {
+    background: none;
+    border: 2px solid white;
+    color: white;
+    padding: 12px 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 50px; /* Pill-shaped button */
+    margin-bottom: 30px;
+    transition: all 0.2s ease-in-out; /* Smooth hover effect */
 }
 
-/* --- Button Styling --- */
-button {
-  display: block;
-  margin: 20px auto; /* Center the button */
-  padding: 10px 20px;
-  background-color: #007bff; /* A nice blue color */
-  color: white;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
-  cursor: pointer; /* Changes the cursor to a pointer on hover */
-  transition: background-color 0.3s; /* Smooth transition for hover effect */
+.audio-control:hover {
+    background-color: white;
+    color: black;
 }
 
-button:hover {
-  background-color: #0056b3; /* A darker blue when you hover over it */
+/* --- Video Player Styling --- */
+.project-video {
+    max-width: 90%; /* Make sure it fits on smaller screens */
+    width: 600px;  /* Set a specific width for larger screens */
+    border-radius: 8px; /* Slightly rounded corners */
 }
