@@ -1,0 +1,12 @@
+# === Netlify Configuration for a Single Page Application ===
+
+[build]
+  # This is the directory to publish, assuming all files are in the root.
+  publish = "/"
+
+[[redirects]]
+  # The rule for SPA routing. Any request that is not a file
+  # gets redirected to the root index.html to be handled by the JS router.
+  from = "/*"
+  to = "/index.html"
+  status = 200
